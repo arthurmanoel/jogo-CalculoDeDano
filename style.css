@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.content {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkslategray;
+}
+.main-content {
+  flex: 0 0 700px;
+  height: 600px;
+  margin: 30px 0 100px 0;
+  background-color: rgb(175, 110, 84);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-auto-rows: minmax(300px, 100%);
+  gap: 100px 20px;
+  grid-template-areas:
+    "person1 battle person2"
+    "resultBattle resultBattle resultBattle";
+}
+.person1 {
+  grid-area: person1;
+}
+.person2 {
+  grid-area: person2;
+}
+
+.person {
+  max-width: 400px;
+  height: 325px;
+  margin: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid black;
+  background-color: wheat;
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+.person img {
+  width: 200px;
+  height: auto;
+  align-self: center;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px 0;
+}
+.shield {
+  align-self: center;
+  padding-top: 2px;
+}
+.buttonShield {
+  padding: 4px;
+  font-family: "Titillium Web", sans-serif;
+  border: 3px outset black;
+  background-color: #a9a9a9;
+  font-weight: bold;
+  cursor: pointer;
+}
+.battle {
+  grid-area: battle;
+  justify-self: center;
+  align-self: center;
+  margin-top: 50px;
+}
+.battle button {
+  padding: 10px;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  border: 3px outset black;
+  cursor: pointer;
+}
+.resultBattle {
+  grid-area: resultBattle;
+  justify-self: center;
+}
+.resultBattle textarea {
+  border: 3px dotted darkgrey;
+  padding: 10px;
+  line-height: 2;
+}
+
+@media (max-width: 768px) and (min-width: 280px) {
+  .main-content {
+    flex: 0 1 400px;
+    height: auto;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 2fr 1fr 2fr;
+    grid-template-areas:
+      "person1"
+      "person2"
+      "battle"
+      "resultBattle";
+    gap: 20px 20px;
+    border: 4px solid black;
+  }
+  .person {
+    flex: 0 0 200px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .person img {
+    width: 210px;
+    height: auto;
+    padding-bottom: 7px;
+    align-self: center;
+  }
+  .inputs {
+    padding: 5px 10px 5px 10px;
+    font-size: 20px;
+    flex-wrap: wrap;
+  }
+  .inputs input {
+    padding: 7px 10px 7px 10px;
+  }
+  .battle {
+    align-self: center;
+    margin-bottom: 100px;
+    padding: 10px;
+    border: 2px solid black;
+  }
+  .resultBattle textarea {
+    max-width: 260px;
+    height: 380px;
+  }
+}
+@media (max-width: 768px) and (min-width: 340px) {
+  .inputs input {
+    padding-right: 65px;
+  }
+}
